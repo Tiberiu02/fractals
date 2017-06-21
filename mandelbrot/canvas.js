@@ -16,28 +16,26 @@ function hexToRgb(hex) {
     } : null;
 }
 
-CanvasRenderingContext2D.prototype.getPixels = function()
-{
-	var imageData = this.getImageData(0, 0, this.canvas.width, this.canvas.height);
-	var data = imageData.data;
+CanvasRenderingContext2D.prototype.getPixels = function() {
+    var imageData = this.getImageData(0, 0, this.canvas.width, this.canvas.height);
+    var data = imageData.data;
 
-	var pixels = [];
-	for (var i = 0; i < data.length; i += 4)
-		pixels.push([data[i], data[i + 1], data[i + 2]]);
+    var pixels = [];
+    for (var i = 0; i < data.length; i += 4)
+        pixels.push([data[i], data[i + 1], data[i + 2]]);
 
-	return pixels;
+    return pixels;
 }
 
-CanvasRenderingContext2D.prototype.setPixels = function(pixels)
-{
-	var data = [];
-	for (var i = 0; i < pixels.length; i ++) {
-		data.push(pixels[i][0], pixels[i][1], pixels[i][2], 255);
-	}
+CanvasRenderingContext2D.prototype.setPixels = function(pixels) {
+    var data = [];
+    for (var i = 0; i < pixels.length; i++) {
+        data.push(pixels[i][0], pixels[i][1], pixels[i][2], 255);
+    }
 
-	var imageData = this.getImageData(0, 0, this.canvas.width, this.canvas.height);
-	for (var i = 0; i < data.length; i ++)
-		imageData.data[i] = data[i];
+    var imageData = this.getImageData(0, 0, this.canvas.width, this.canvas.height);
+    for (var i = 0; i < data.length; i++)
+        imageData.data[i] = data[i];
 
-	this.putImageData(imageData, 0, 0);
+    this.putImageData(imageData, 0, 0);
 }

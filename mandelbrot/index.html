@@ -1,28 +1,35 @@
 <html>
-  <head>
+
+<head>
     <style>
-      canvas{
-        border: 0px solid gray;
-				position: absolute;
-				top: 0px;
-				left: 0px;
-				z-index: -1;
-      }
-      * {
-        font-family: Ubuntu;
-        font-size: 20px;
-      }
-      body::-webkit-scrollbar {
-        display: none;
-      }
+        canvas {
+            border: 0px solid gray;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+        }
+
+        * {
+            font-family: Ubuntu;
+            font-size: 20px;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
     </style>
-  </head>
-  <body onload="init()" onresize="updateCanvasSize()" onMouseMove="updateMouse(event)" onkeypress="keyPress()">
+</head>
+
+<body onload="init()" onresize="updateCanvasSize()" onMouseMove="updateMouse(event)" onkeypress="keyPress()">
     <canvas width="500px" height="500px" id="mandelbrot"></canvas>
     <canvas width="500px" height="500px" id="visible"></canvas>
-		<h1 style="z-index: 10;" onclick="toggleMoving()"><font color="white">Press SPACE to lock/unlock movement<br>- use mouse to move<br>- use mouse wheel to zoom</font></h1>
-  </body>
+    <h1 style="z-index: 10;" onclick="toggleMoving()">
+        <font color="white">Press SPACE to lock/unlock movement<br>- use mouse to move<br>- use mouse wheel to zoom</font>
+    </h1>
+</body>
 
-  <script src="client.js"></script>
-  <script src="canvas.js"></script>
+<script src="client.js"></script>
+<script src="canvas.js"></script>
+
 </html>
